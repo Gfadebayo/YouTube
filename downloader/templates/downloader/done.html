@@ -1,0 +1,49 @@
+{% extends 'downloader/base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'downloader/style/done.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <h1>{{ video.title }}</h1>
+
+  <img src="{{ video.thumbnail_url }}" alt="{{video.title}}">
+
+  <ul>
+    <li>
+      <span>Date Created</span>{{ video.publish_date }}
+    </li>
+
+    <li>
+      <span>Duration</span>{{ video.duration }}
+    </li>
+
+    <li>
+      <span>Description</span>{{ video.description }}
+    </li>
+  </ul>
+
+  <table>
+    <thead>
+      <tr>
+        <th> Resolution </th>
+        <th> File Type </th>
+        <th> File Size </th>
+        <th> Download Link </th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for wrapper in video.streams %}
+  <tr>
+    <td>{{ wrapper.stream.resolution }}</td>
+    <td>{{ wrapper.stream.type }}</td>
+    <td>{{ wrapper.size }}</td>
+    <td><a href="{{ wrapper.stream.url }}"><button type="button" name="button">Download</button></a></td>
+  </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
