@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'youtube.wsgi.application'
+WSGI_APPLICATION = 'youtube.wsgi.application'
 
 
 # Database
