@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-6x!dn4l+75xwqc@n%a+#bhsaoeq9fye2-1@pj(k!w)je-cqq8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['murmuring-hollows-24800.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
